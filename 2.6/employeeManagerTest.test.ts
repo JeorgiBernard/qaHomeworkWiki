@@ -9,6 +9,7 @@ import {Builder,By, Capabilities, until, WebDriver, } from "selenium-webdriver";
       driver: WebDriver;
       url: string = "https://devmountain-qa.github.io/employee-manager/1.2_Version/index.html";
         //FILL OUT LOCATORS CONSTRUCTOR AND METHODS IN ORDER TO PASS THE TEST
+        header: By = By.
   }
 
   describe("Employee Manger Test", () => {

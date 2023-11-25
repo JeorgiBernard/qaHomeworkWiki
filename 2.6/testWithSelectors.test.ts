@@ -12,7 +12,7 @@ describe("Filling in the blanks", () => {
         await driver.quit();
     })
 
-    const hdrInput: By = By. //fill in the blank
+    const hdrInput: By = By.name('hdrInput');
     const mkeInput: By = By. //fill in the blank
     const oaiInput: By = By. //fill in the blank
     const nameInput: By = By. //fill in the blank
