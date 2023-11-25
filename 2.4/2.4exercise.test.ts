@@ -1,3 +1,4 @@
+//Things that need to be imported for silenium to work 
 import {
     Builder,
     By,
@@ -13,6 +14,8 @@ const chromedriver = require("chromedriver");
 const driver: WebDriver = new Builder()
     .withCapabilities(Capabilities.chrome())
     .build();
+
+//variables will be a brighter color when called in the code below
 const bernice: By = By.name("employee1");
 const marnie: By = By.name("employee2");
 const phillip: By = By.name("employee3");
@@ -34,7 +37,9 @@ describe("Employee Manager 1.2", () => {
     afterAll(async () => {
         await driver.quit();
     });
+    // describe is what you are testing in the function and does not need async
     describe("handles unsaved, canceled, and saved changes correctly", () => {
+       //this is the funtion for the test 
         test("An unsaved change doesn't persist", async () => {
         /*
         This test follows these steps:
@@ -44,6 +49,7 @@ describe("Employee Manager 1.2", () => {
         4. Open Bernice Ortiz
         5. Verify the name field is the original name
         */
+       //await is wait until "what ever you want to happen" then it will move on
         await driver.findElement(bernice).click();
         await driver.wait(
             until.elementIsVisible(await driver.findElement(nameInput))
@@ -64,6 +70,7 @@ describe("Employee Manager 1.2", () => {
             "Bernice"
             )
         );
+        //what you are expecting to happen in the test
         expect(
             await (await driver.findElement(nameInput)).getAttribute("value")
         ).toBe("Bernice Ortiz");
@@ -169,4 +176,7 @@ describe("Employee Manager 1.2", () => {
         });
     });
 });
-// testing
+
+//all should have describe, test, and expect 
+
+//I had to delete all previous homework because git hub wasnt working. This is the only homework I have added comments to.
